@@ -6,8 +6,8 @@ export default function App() {
   useEffect(() => {
     fetch("https://kekeo-farm.onrender.com/api/products")
       .then((res) => res.json())
-      .then((data) => console.log(data));
-
+      .then((data) => setProducts(data))   // ✅ update state instead of just console.log
+      .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
   return (
@@ -20,7 +20,9 @@ export default function App() {
             <img src={p.image} alt={p.name} style={{ width: "100%", borderRadius: "10px" }} />
             <h3>{p.name}</h3>
             <p>Price: KES {p.price}</p>
-            <button style={{ padding: "10px", background: "green", color: "white", border: "none", borderRadius: "5px" }}>Order</button>
+            <button style={{ padding: "10px", background: "green", color: "white", border: "none", borderRadius: "5px" }}>
+              Order
+            </button>
           </div>
         ))}
       </div>
