@@ -4,9 +4,10 @@ export default function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products")
-      .then(res => res.json())
-      .then(data => setProducts(data));
+    fetch("https://kekeo-farm.onrender.com/api/products")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
   }, []);
 
   return (
