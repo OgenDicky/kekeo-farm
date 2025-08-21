@@ -6,7 +6,7 @@ export default function App() {
   useEffect(() => {
     fetch("https://kekeo-farm.onrender.com/api/products")
       .then((res) => res.json())
-      .then((data) => setProducts(data));   // ✅ actually update products
+      .then((data) => setProducts(data))   // ✅ actually update products
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
