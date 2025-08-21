@@ -9,6 +9,9 @@ products = [
     {"id": 2, "name": "Sukuma Wiki", "price": 50, "image": "https://i.pinimg.com/736x/58/dd/9d/58dd9d1ac2cfc92f33e43c3a07a1123f.jpg"},
     {"id": 3, "name": "Spinach", "price": 60, "image": "https://i.pinimg.com/1200x/b6/c5/97/b6c597c76d4a9225f27428ce3621443d.jpg"},
 ]
+@app.route("/")
+def home():
+    return "Welcome to Kekeo Farm API! 🚜"
 
 @app.route("/api/products", methods=["GET"])
 def get_products():
